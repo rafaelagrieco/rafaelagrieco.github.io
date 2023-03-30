@@ -7,6 +7,13 @@ let disconnectButton = document.getElementById('disconnect');
 let terminalContainer = document.getElementById('saida');
 let switchQualquer = document.getElementById('SwitchA');
 let medidorQualquer=document.getElementById('BarraA');
+
+#include "dht.h" //INCLUSÃO DE BIBLIOTECA
+
+const int pinoDHT11 = A5; //PINO ANALÓGICO UTILIZADO PELO DHT11
+
+dht DHT; //VARIÁVEL DO TIPO DHT
+
 // Funções para os controles gráficos
 function MudouSwitch()
 {
@@ -26,7 +33,7 @@ function MudouSwitch()
 //TROQUEI DE LUGAR A FUNÇÃO EM RELAÇÃO AO CÓDIGO ORIGINAL!!!!
 // Processa os dados recebidos
 function receive(data) {
-	if(data.substr(0, 2)=="#b")
+	if(data.substr(0, 2)=="#bSerial.print(DHT.temperature, 0)")
 	{
 		var valor=parseInt(data.substr(2,data.length));		
 		controleMedidor(valor);		
