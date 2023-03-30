@@ -33,7 +33,7 @@ function MudouSwitch()
 //TROQUEI DE LUGAR A FUNÇÃO EM RELAÇÃO AO CÓDIGO ORIGINAL!!!!
 // Processa os dados recebidos
 function receive(data) {
-	if(data.substr(0, 2)=="#bSerial.print(DHT.temperature, 0)")
+	if(data.substr(0, 2)=="#bSerial.write(DHT.temperature, 0)")
 	{
 		var valor=parseInt(data.substr(2,data.length));		
 		controleMedidor(valor);		
